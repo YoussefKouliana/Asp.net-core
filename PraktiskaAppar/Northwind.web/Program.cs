@@ -1,6 +1,9 @@
+using Northwind.DataContext.SqlServer;
+
 #region// configure web server host and services
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
+builder.Services.AddNorthwindDatabaseContext();
 
 
 var app = builder.Build();
