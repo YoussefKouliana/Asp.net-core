@@ -15,7 +15,7 @@ namespace Northwind.DataContext.SqlServer
     {
         //<summary>
         
-        public static IServiceCollection AddNorthwindDatabaseContext(this IServiceCollection services, string? connectionString= null) //typen av services som extends
+        public static IServiceCollection AddNorthwindContext(this IServiceCollection services, string? connectionString= null) //typen av services som extends
         {
             {
                 if (connectionString is null)

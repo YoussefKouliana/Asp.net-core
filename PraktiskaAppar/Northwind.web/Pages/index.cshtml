@@ -4,9 +4,9 @@
     public string? TimeNow {get; set;}
    public void OnGet()
    {
-    ViewData["Title"] = "Northwind APP Home Page";
-    DayName = DateTime.Now.DayOfWeek.ToString();
-    TimeNow = DateTime.Now.ToString();
+        ViewData["Title"] = "Northwind APP Home Page";
+        DayName = DateTime.Now.DayOfWeek.ToString();
+        TimeNow = DateTime.Now.ToString("f");
    }
 }
 
@@ -20,5 +20,9 @@
         <a class="btn btn-primary"
            href="suppliers"> learn More about out suppliers
         </a>
+    </p>
+    <p>
+        <a class="btn btn-primary"
+           href="northwindfeatures/employees">Contact our employees!</a>
     </p>
 </div>
