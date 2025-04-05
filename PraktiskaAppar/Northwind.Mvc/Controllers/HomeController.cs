@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization; // for [Authorize] attribute
 using Microsoft.AspNetCore.Mvc;
 using Northwind.EntityModels;
 using Northwind.Mvc.Models;
@@ -46,6 +47,7 @@ namespace Northwind.Mvc.Controllers
             return View(model);
         }
 
+        [Authorize]
         public IActionResult Privacy()
         {
             return View();

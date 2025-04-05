@@ -1,0 +1,78 @@
+﻿@model Northwind.EntityModels.Category
+
+@{
+    ViewData["Title"] = "Category Details";
+}
+
+<div class="category-details-container">
+    <div class="category-card">
+        <div class="category-image">
+            <img src="@Url.Content($"~/images/category{Model.CategoryId}.jpg")"
+                 alt="@Model.CategoryName"
+                 onerror="this.onerror=null;this.src='@Url.Content("~/images/default-category.jpg")';" />
+        </div>
+        <div class="category-info">
+            <h1>@Model.CategoryName</h1>
+            <p><strong>Description:</strong><br />@Model.Description</p>
+            <a href="@Url.Action("Index", "Home")" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .category-details-container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .category-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .category-image img {
+        max-width: 100%;
+        max-height: 350px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    .category-info {
+        flex: 1;
+        min-width: 250px;
+    }
+
+        .category-info h1 {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 20px;
+        }
+
+        .category-info p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #6c757d;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+    }
+
+        .back-button:hover {
+            background-color: #495057;
+        }
+</style>
